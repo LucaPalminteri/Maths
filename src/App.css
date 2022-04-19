@@ -1,0 +1,58 @@
+body {
+  background-color: #F5F474;
+}
+
+.App {
+  text-align: center;
+}
+.input {
+  width: 70px;
+  font-size: 40px;
+}
+
+.container {
+  border-radius: 15px;
+}
+
+.points {
+  width: 250px;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.operation {
+  padding: 20px;
+  font-size: 40px;
+  margin: 40px 0;
+}
+
+button {
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.message{
+  transition-duration: .5s;
+  padding: 20px;
+  width: 100px;
+  margin: 50px auto;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid;
+}
+
+.c {
+  color: green;
+}
+
+.i {
+  color: red;
+}
