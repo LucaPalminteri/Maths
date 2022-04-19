@@ -9,7 +9,7 @@ export default function Maths() {
     const [games,setGames] = useState(0)
     const [wins,setWins] = useState(0)
     //const [random,setRandom] = useState(Math.floor(Math.random()*4))
-    const [random,setRandom] = useState(0)
+    const [random,setRandom] = useState(3)
 
     return (
         <div className="container">

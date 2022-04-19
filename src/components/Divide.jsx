@@ -3,9 +3,13 @@ import React, {useState} from "react";
 export default function Maths(props) {
 
     const [input,setInput] = useState('')
-    const [res,setRes] = useState(Math.floor(Math.random()*(10)) + 1)
+    const [res,setRes] = useState(Math.floor(Math.random()*(10)))
     const [num,setNum] = useState(Math.floor(Math.random()*10 + 1)* res)
     const [message,setMesagge] = useState()
+
+
+    res === 0 ? setRes(prev => prev + 1): res
+    res>num ? setRes(Math.floor(Math.random()*(10))) : res
 
     function handleInput(event) {
         setInput(event.target.value)
@@ -18,16 +22,17 @@ export default function Maths(props) {
     }
 
     function toggle(event) {
-        if(num + parseInt(input) == res) {
+        if(num / parseInt(input) == res) {
             setMesagge('correct')
         }
         else  {
             setMesagge('incorrect')
         }
         setTimeout(()=>{
+            let randomNumber = Math.floor(Math.random()*(10))
             setInput('')
-            setNum(Math.floor(Math.random()*99))
-            setRes(Math.floor(Math.random()*(100-num))+num)
+            setRes(randomNumber + 1)
+            setNum((randomNumber + 1)* res)
             setMesagge()
         },1500)
     }
