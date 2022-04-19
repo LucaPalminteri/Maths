@@ -7,7 +7,9 @@ export default function Maths(props) {
     const [res,setRes] = useState(Math.floor(Math.random()*(11))*num)
     const [message,setMesagge] = useState()
 
-    
+    num === 0 ? setNum(Math.floor(Math.random()*11)) : num
+    res<num ? setRes(Math.floor(Math.random()*(11))*num) : res
+
 
     function handleInput(event) {
         setInput(event.target.value)
@@ -27,9 +29,10 @@ export default function Maths(props) {
             setMesagge('incorrect')
         }
         setTimeout(()=>{
+            let randomNumber = Math.floor(Math.random()*11)
             setInput('')
-            setNum(Math.floor(Math.random()*11))
-            setRes(Math.floor(Math.random()*(11))*num)
+            setNum(randomNumber)
+            setRes(randomNumber*num)
             setMesagge()
         },1500)
     }
