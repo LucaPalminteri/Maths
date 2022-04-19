@@ -1,6 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { MathContext } from "./MathContext";
 
 export default function Maths(props) {
+
+    const {addGames,addWin,changeOption} = useContext(MathContext)
 
     const [input,setInput] = useState('')
     const [res,setRes] = useState(Math.floor(Math.random()*(10)))
@@ -22,8 +25,10 @@ export default function Maths(props) {
     }
 
     function toggle(event) {
+        addGames()
         if(num / parseInt(input) == res) {
             setMesagge('correct')
+            addWin();
         }
         else  {
             setMesagge('incorrect')
@@ -34,6 +39,7 @@ export default function Maths(props) {
             setRes(randomNumber + 1)
             setNum((randomNumber + 1)* res)
             setMesagge()
+            changeOption()
         },1500)
     }
 
@@ -42,6 +48,7 @@ export default function Maths(props) {
         <div >
             <div className="operation">
                 {num} / <input 
+                    autoFocus
                     onKeyPress={handleKeyPress}
                     name="input"
                     value={input}

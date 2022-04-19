@@ -1,10 +1,21 @@
 body {
-  background-color: #F5F474;
+  background: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F01%2F16%2F20%2F16%2Fmath-1143869_960_720.jpg&f=1&nofb=1);
+  background-size: cover;
 }
 
 .App {
+  backdrop-filter: blur(20px);
+  margin: auto;
+  padding-bottom: 20px;
+  width: 60%;
   text-align: center;
+  border-radius: 20px;
 }
+
+h1 {
+  padding: 20px;
+}
+
 .input {
   width: 70px;
   font-size: 40px;
@@ -12,11 +23,14 @@ body {
 }
 
 .container {
+  padding-top: 20px;
+  margin: 0 20px;
+  background-color: #FFFBD5;
   border-radius: 15px;
 }
 
 .points {
-  width: 250px;
+  width: 80%;
   margin: auto;
   border-radius: 10px;
   border: 1px solid;
@@ -31,20 +45,32 @@ body {
 }
 
 button {
-  padding: 20px;
+  padding: 8px 20px;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background-color: #2376e6;
+  margin-bottom: 20px;
+  transition-duration: .2s;
 }
 
 button:hover {
   cursor: pointer;
+  background-color: #1366d6;
 }
+
+button:active {
+  background-color: #0356c6;
+  transform: scale(1.1);
+}
+
 
 .message{
   transition-duration: .5s;
   padding: 20px;
   width: 100px;
-  margin: 50px auto;
+  margin: auto;
+  margin-bottom: 10px;
   font-size: 20px;
   border-radius: 5px;
   border: 1px solid;
@@ -52,8 +78,17 @@ button:hover {
 
 .c {
   color: green;
+  background-color: #90ee90;
 }
 
 .i {
   color: red;
+  background-color: #FF7F7F;
+}
+
+@media screen and (max-width: 700px) {
+  .App{
+    width: 95%;
+  }
+  
 }
