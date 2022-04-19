@@ -3,15 +3,21 @@ import React, {useState} from "react";
 export default function Maths(props) {
 
     const [input,setInput] = useState('')
-    const [num,setNum] = useState(Math.floor(Math.random()*99))
-    const [res,setRes] = useState(Math.floor(Math.random()*(100-num))+num)
+    const [res,setRes] = useState(Math.floor(Math.random()*(10)) + 1)
+    const [num,setNum] = useState(Math.floor(Math.random()*10 + 1)* res)
     const [message,setMesagge] = useState()
 
     function handleInput(event) {
         setInput(event.target.value)
     }
 
-    function toggle() {
+    function handleKeyPress(target) {
+        if(target.charCode === 13) {
+            toggle(target)
+        }
+    }
+
+    function toggle(event) {
         if(num + parseInt(input) == res) {
             setMesagge('correct')
         }
@@ -28,18 +34,21 @@ export default function Maths(props) {
 
 
     return (
-        <div>
+        <div >
             <div className="operation">
-                {num} + <input 
+                {num} / <input 
+                    onKeyPress={handleKeyPress}
                     name="input"
                     value={input}
                     onChange={handleInput} 
                     className="input" 
                     type='number' 
-                    min='0' 
+                    min='1' 
                     max='100'/> = {res}
             </div>
-            <button onClick={toggle}>Cheeck</button>
+            <button onClick={toggle}>
+                Cheeck
+            </button>
             {message === 'correct' ? <h4 className="message c">Correct</h4> : message === 'incorrect' ? <h4 className="message i">Incorrect</h4> : message}
         </div>
     )
