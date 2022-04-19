@@ -7,7 +7,7 @@ export default function Maths(props) {
     const [res,setRes] = useState(Math.floor(Math.random()*(100-num))+num)
     const [message,setMesagge] = useState()
 
-    res<num ? setRes(Math.floor(Math.random()*(num))) : res;
+    res<num ? setRes(Math.floor(Math.random()*(100-num))+num) : res
 
     function handleInput(event) {
         setInput(event.target.value)
